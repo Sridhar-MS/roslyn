@@ -85,7 +85,7 @@
       <CoreTestAssemblies Include="$(CoreClrTestDirectory)\$(IncludePattern)" />
 
       <MisplacedTestAssemblies Include="$(OutputDirectory)\**\$(IncludePattern)"
-                               Exclude="@(OutputDirectory)\$(IncludePattern);@(CoreTestAssemblies)" />
+                               Exclude="$(OutputDirectory)\$(IncludePattern);@(CoreTestAssemblies)" />
     </ItemGroup>
 
     <Error Condition="'@(MisplacedTestAssemblies->Count())' &gt; 0"
